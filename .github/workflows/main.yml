@@ -9,10 +9,10 @@ jobs:
   linuxbuild:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.3
 
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v4.1.0
       with:
         go-version: 1.20
     - name: linux Build
@@ -21,7 +21,7 @@ jobs:
         go mod download
         go build -o navgix -v navgix.go
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v3.1.2
       with:
         # Artifact name
         name: # optional, default is artifact
@@ -34,10 +34,10 @@ jobs:
   macbuild:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.3
 
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v4.1.0
       with:
         go-version: 1.20
     - name: mac Build
@@ -46,7 +46,7 @@ jobs:
         go mod download
         go build -o navgix_darwin -v navgix.go
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v3.1.2
       with:
         # Artifact name
         name: # optional, default is artifact
@@ -59,10 +59,10 @@ jobs:
   winbuild:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.3
 
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v4.1.0
       with:
         go-version: 1.20
     - name: Windows Build
@@ -71,7 +71,7 @@ jobs:
         go mod download
         go build -o navgix.exe -v navgix.go
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v3.1.2
       with:
         # Artifact name
         name: # optional, default is artifact
